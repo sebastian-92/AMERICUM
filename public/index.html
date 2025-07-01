@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/baremux/index.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", async () => {
+          await navigator.serviceWorker.register("/uv/sw.js");
+        });
+      }
+    </script>
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <center class="top">
+      <h1 class="cool">
+            <video autoplay style="display:none;">
+              <source src="eagle.mp3" type="audio/mpeg">
+            </video>
+
+        <img height="40" src="images/eag2.gif" />
+        <strong>AMERICUM PROXY</strong>
+        <img height="40" src="images/eag2.gif" />
+            <audio autoplay src="eagle.mp3"></audio>
+
+      </h1>
+    </center>
+    <iframe id="iframeWindow" class="iframeWindow"></iframe>
+    <div class="bottom cool">
+      <img width="auto" height="100" src="images/eage.gif" />
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="SEARCH FOR SOMETHING PATRIOTIC"
+      />
+      <button id="searchButton" class="cool"><strong>SERVE DEMOCRACY</strong></button>
+      <select id="switcher" class="cool">
+        <option value="epoxy">FREEDOM (WISP)</option>
+        <option value="bare">FREEDOM (BARE)</option>
+      </select>
+      <img width="auto" height="100" src="images/eage.gif" />
+    </div>
+  </body>
+  <!-- jsDelivr  -->
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+  <!-- Usage -->
+  <script>
+    const fireworks = new Fireworks.default(document.body, { sound: {enabled:true, files: ['explosion1.mp3'], volume: {min: 30, max: 70} } });
+    fireworks.start();
+  </script>
+  <script src="main.js"></script>
+</html>
