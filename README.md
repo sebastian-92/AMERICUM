@@ -5,8 +5,11 @@
 # FEATURES
 # - FIREWORKS
 # - AMERICAN FLAG
+# - SCRAMJET
+# - ULTRAVIOLET
 # - EAGLE SCREAMING
 # - THE AMERICAN DREAM
+
 
 # USAGE
 
@@ -19,6 +22,7 @@
 # - THE FOUNDING FATHERS
 # - [CRLLECT](https://github.com/crllect/How-to-make-an-ultraviolet-proxy)
 # - [TITANIUM NETWORK](https://github.com/titaniumnetwork-dev/Ultraviolet)
+# - [MERCURY WORKSHOP](https://github.com/mercuryworkshop/scramjet)
 # - CBASS92 - THE DEVELOPER OF THIS PROXY, AND A PROUD AMERICAN
 
 # LICENSE IS AGPL-3.0, AND LIKE 'MERICA THIS SOFTWARE IS FREE

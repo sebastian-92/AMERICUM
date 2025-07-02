@@ -4,7 +4,8 @@
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
     <script src="/baremux/index.js"></script>
-
+    <script src="/scram/scramjet.worker.js"></script>
+    <script src="/scram/scramjet.shared.js"></script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", async () => {
@@ -18,17 +19,21 @@
   <body>
     <center class="top">
       <h1 class="cool">
-            <video autoplay style="display:none;">
-              <source src="eagle.mp3" type="audio/mpeg">
-            </video>
+        <video autoplay style="display: none">
+          <source src="eagle.mp3" type="audio/mpeg" />
+        </video>
 
         <img height="40" src="images/eag2.gif" />
         <strong>AMERICUM PROXY</strong>
         <img height="40" src="images/eag2.gif" />
-            <audio autoplay src="eagle.mp3"></audio>
-
+        <audio autoplay src="eagle.mp3"></audio>
       </h1>
     </center>
+    <div class="wrapper">
+      <div class="bg left"></div>
+      <div class="bg right"></div>
+    </div>
+
     <iframe id="iframeWindow" class="iframeWindow"></iframe>
     <div class="bottom cool">
       <img width="auto" height="100" src="images/eage.gif" />
@@ -37,20 +42,31 @@
         id="urlInput"
         placeholder="SEARCH FOR SOMETHING PATRIOTIC"
       />
-      <button id="searchButton" class="cool"><strong>SERVE DEMOCRACY</strong></button>
+      <button id="searchButton" class="cool">
+        <strong>SERVE AMERICA</strong>
+      </button>
       <select id="switcher" class="cool">
         <option value="epoxy">FREEDOM (WISP)</option>
         <option value="bare">FREEDOM (BARE)</option>
       </select>
+      <select id="proxy" class="switcher cool">
+        <option value="scram">DEMOCRACY (SCRAMJET)</option>
+        <option value="uv">DEMOCRACY (UV)</option>
+      </select>
       <img width="auto" height="100" src="images/eage.gif" />
     </div>
   </body>
-  <!-- jsDelivr  -->
   <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
-  <!-- Usage -->
   <script>
-    const fireworks = new Fireworks.default(document.body, { sound: {enabled:true, files: ['explosion1.mp3'], volume: {min: 30, max: 70} } });
+    const fireworks = new Fireworks.default(document.body, {
+      sound: {
+        enabled: true,
+        files: ["explosion1.mp3"],
+        volume: { min: 30, max: 70 },
+      },
+    });
     fireworks.start();
   </script>
+  <script src="/scram/scramjet.controller.js"></script>
   <script src="main.js"></script>
 </html>
