@@ -72,3 +72,10 @@ document.getElementById("switcher").onselect = async function (event) {
       break;
   }
 };
+// var tabIds = [];
+// function newTab(url) {
+//   let newTab = document.createElement("iframe");
+//   newTab.className = "iframeWindow";
+//   scramjet.createFrame(newTab);
+//   newTab.src = scramjet.encodeUrl(url);
+//   }
