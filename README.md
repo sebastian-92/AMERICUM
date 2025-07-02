@@ -6,6 +6,7 @@
 # - FIREWORKS
 # - AMERICAN FLAG
 # - SCRAMJET
+# - THE NATIONAL ANTHEM
 # - ULTRAVIOLET
 # - EAGLE SCREAMING
 # - THE AMERICAN DREAM
@@ -23,6 +24,7 @@
 # - [CRLLECT](https://github.com/crllect/How-to-make-an-ultraviolet-proxy)
 # - [TITANIUM NETWORK](https://github.com/titaniumnetwork-dev/Ultraviolet)
 # - [MERCURY WORKSHOP](https://github.com/mercuryworkshop/scramjet)
+# - [BITMIDI](https://bitmidi.com/star-spangled-banner-mid)
 # - CBASS92 - THE DEVELOPER OF THIS PROXY, AND A PROUD AMERICAN
 
 # LICENSE IS AGPL-3.0, AND LIKE 'MERICA THIS SOFTWARE IS FREE
