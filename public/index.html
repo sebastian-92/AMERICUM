@@ -34,8 +34,8 @@
       <div class="bg left"></div>
       <div class="bg right"></div>
     </div>
-
-    <iframe id="iframeWindow" class="iframeWindow"></iframe>
+    <div id="center"></div>
+    <!-- <iframe id="iframeWindow" class="iframeWindow"></iframe> -->
     <div class="bottom cool">
       <img width="auto" height="100" src="images/eage.gif" />
       <input
@@ -43,7 +43,11 @@
         id="urlInput"
         placeholder="SEARCH FOR SOMETHING PATRIOTIC"
       />
-      <button id="searchButton" class="cool">
+      <button
+        id="searchButton"
+        class="cool"
+        onclick="document.getElementById('eagleSound').play()"
+      >
         <strong>SERVE AMERICA</strong>
       </button>
       <select id="switcher" class="cool">
@@ -59,6 +63,7 @@
     <audio id="bannerSound" loop src="Star-Spangled-Banner.mp3"></audio>
     <audio id="eagleSound" src="eagle.mp3"></audio>
     <div id="overlay">CLICK ANYWHERE TO BEGIN YOUR PATRIOTIC JOURNEY!</div>
+    <div class="eagle"><img src="images/EAGLE.png" /></div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
   <script>

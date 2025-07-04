@@ -13,7 +13,7 @@ const scramjet = new ScramjetController({
 navigator.serviceWorker.register("/scramjet/sw.js");
 scramjet.init();
 
-const frame = scramjet.createFrame(document.getElementById("iframeWindow"));
+// const frame = scramjet.createFrame(document.getElementById("iframeWindow"));
 const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
 const wispUrl =
   (location.protocol === "https:" ? "wss" : "ws") +
@@ -51,15 +51,7 @@ document.getElementById("searchButton").onclick = async function (event) {
   if (!(await connection.getTransport())) {
     await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
   }
-  switch (document.getElementById("proxy").value) {
-    case "uv":
-      document.getElementById("iframeWindow").src =
-        __uv$config.prefix + __uv$config.encodeUrl(url);
-      break;
-    case "scram":
-      frame.go(url);
-      break;
-  }
+  newTab(url);
 };
 
 document.getElementById("switcher").onselect = async function (event) {
@@ -72,10 +64,51 @@ document.getElementById("switcher").onselect = async function (event) {
       break;
   }
 };
-// var tabIds = [];
-// function newTab(url) {
-//   let newTab = document.createElement("iframe");
-//   newTab.className = "iframeWindow";
-//   scramjet.createFrame(newTab);
-//   newTab.src = scramjet.encodeUrl(url);
-//   }
+function toggleDisplay(id) {
+  let element = document.getElementById(id);
+  if (element.style.display === "none" || element.style.display === "") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+function randintrange(min, max) {
+  min = Math.ceil(min); // Ensure min is an integer
+  max = Math.floor(max); // Ensure max is an integer
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var tabIds = 0;
+function newTab(url) {
+  var frameID = tabIds++;
+  let newTab = document.createElement("iframe");
+  newTab.className = "iframeWindow";
+  newTab.id = "frame-" + frameID;
+  newTab.style.display = "none";
+
+  document.getElementById("center").appendChild(newTab);
+  scramjet.createFrame(newTab);
+
+  let eagleDiv = document.createElement("div");
+  eagleDiv.className = "eagle";
+  eagleDiv.id = frameID;
+  eagleDiv.onclick = () => changeTab(frameID);
+  eagleDiv.style.top = randintrange(0, 70) + "%";
+  eagleDiv.innerHTML = '<img src="images/EAGLE.png" />';
+  document.body.appendChild(eagleDiv);
+
+  switch (document.getElementById("proxy").value) {
+    case "uv":
+      newTab.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+      break;
+    case "scram":
+      newTab.src = scramjet.encodeUrl(url);
+      break;
+  }
+  changeTab(frameID);
+}
+function changeTab(id) {
+  document.querySelectorAll(".iframeWindow").forEach((frame) => {
+    frame.style.display = "none";
+  });
+  document.getElementById("frame-" + id).style.display = "block";
+}

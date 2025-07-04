@@ -135,7 +135,8 @@ body::after {
   color: white;
   margin: 10px;
 }
-#switcher, .switcher {
+#switcher,
+.switcher {
   margin: 10px;
   width: 200px;
   height: 40px;
@@ -154,7 +155,7 @@ body::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('images/eag2.gif');
+  background-image: url("images/eag2.gif");
   background-size: cover;
   display: flex;
   align-items: center;
@@ -165,4 +166,20 @@ body::after {
   cursor: pointer;
   transition: opacity 1s ease;
   font-family: "freepixel", sans-serif;
+}
+.eagle {
+  position: fixed;
+  animation: moveBus 8s infinite;
+}
+
+@keyframes moveBus {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 110%;
+  }
+  100% {
+    left: -100%;
+  }
 }
